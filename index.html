@@ -42,6 +42,7 @@
 
     <div class="upload-wrapper">
         <h2>Upload your zip here.</h2>
+        <p>Note: Only zip files compressed with the Deflate method can be uncompressed.</p>
         <input type="file" name="file" id="file">
         <button id="extract" onClick="extract()">Extract</button>
     </div>
@@ -52,6 +53,7 @@
         <div class="append-images-here">
             <p id="noImage">No image found. Your extracted images should be here.</p>
             <p id="tooBig" style="display:none">Your zip file does not contain 5 images!</p>
+            <p id="error" style="display:none">Error: Zip compression method is not supported. (only Deflate method works)</p>
             <!-- THE IMAGES SHOULD BE DISPLAYED INSIDE HERE -->
             <img id="image1" style="width:600px;height:400px;" alt="Image 1">
             <img id="image2" style="width:600px;height:400px;" alt="Image 2">
