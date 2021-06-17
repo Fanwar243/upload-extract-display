@@ -1,5 +1,5 @@
 async function extract() {
-    file = document.getElementById("file").files[0];
+    file = document.getElementById("file").files[0]; //user uploaded archive
     let imagePlaceholders = [
         document.getElementById("image1"),
         document.getElementById("image2"),
@@ -7,12 +7,12 @@ async function extract() {
         document.getElementById("image4"),
         document.getElementById("image5")]
     try {
-        const reader = new zip.ZipReader(new zip.BlobReader(file));
+        const reader = new zip.ZipReader(new zip.BlobReader(file)); //new reader object to read files in the archive
         const entries = await reader.getEntries();
         let images = [];
         if (entries.length === 5) {
             for (i=0; i < entries.length; i++) {
-                const image = await entries[i].getData(
+                const image = await entries[i].getData( //method that rewrites the read data as Blob objects
                     new zip.BlobWriter("image/jpeg")
                 );
                 const blobUrl = URL.createObjectURL(image);
