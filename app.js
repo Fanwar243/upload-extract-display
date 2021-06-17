@@ -1,3 +1,7 @@
+```
+ZipReader, BlobReader, BlobWriter objects and all associated methods are from the zip.js library, found at https://gildas-lormeau.github.io/zip.js/
+```
+
 async function extract() {
     file = document.getElementById("file").files[0]; //user uploaded archive
     let imagePlaceholders = [
